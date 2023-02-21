@@ -1,0 +1,8 @@
+spark-submit --master yarn --deploy-mode client \
+--class com.predictionIO.importData.importReadEventJsonWaka1 \
+--driver-memory 2G \
+--executor-memory 3G \
+--num-executors 5 \
+--conf spark.yarn.executor.memoryOverhead=1000 \
+predictionIO.jar \
+;
