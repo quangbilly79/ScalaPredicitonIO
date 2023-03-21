@@ -1,4 +1,4 @@
-package com.predictionIO.importData
+package com.predictionIO.importDataInitial
 
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions._

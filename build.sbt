@@ -9,9 +9,12 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-sql" % "2.4.0",
   "org.apache.spark" %% "spark-mllib" % "2.4.0",
   "org.apache.spark" %% "spark-streaming" % "2.4.0",
+  "org.apache.spark" %% "spark-sql-kafka-0-10" % "2.4.0",
   "org.apache.predictionio" % "predictionio-sdk-java-client" % "0.13.0",
   "com.recombee" % "api-client" % "4.0.0",
-  "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.6.5"
+  "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.6.5",
+  "mysql" % "mysql-connector-java" % "8.0.28",
+  "net.debasishg" %% "redisclient" % "3.41"
 )
 
 dependencyOverrides ++= Seq(

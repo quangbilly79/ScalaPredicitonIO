@@ -1,4 +1,4 @@
-package com.predictionIO.importData
+package com.predictionIO.importDataInitial
 
 import org.apache.predictionio.sdk.java.{Event, EventClient, FileExporter}
 import org.apache.spark.sql.{Row, SparkSession}
@@ -15,16 +15,16 @@ object importSearchEventJson {
     def importSearchJson(): Unit = {
       var sqlSearch =
         """
-          select user_id, fr.content_id from waka.waka_pd_fact_log_select_on_search as fr
+          select vegaid_id, fr.content_id from waka.waka_pd_fact_log_select_on_search as fr
           |join waka.content_dim as cd on fr.content_id = cd.content_id
           |where data_date_key >= 20220101 and data_date_key < 20220701
-          |and cd.status = "ACT"
+          |and cd.status = "ACT" order by vegaid_id
           |""".stripMargin
       var dfSearch = spark.sql(sqlSearch)
       val searchEventJson = dfSearch
         .withColumn("event", lit("search"))
         .withColumn("entityType", lit("user"))
-        .withColumn("entityId", col("user_id").cast(StringType))
+        .withColumn("entityId", col("vegaid_id").cast(StringType))
         .withColumn("targetEntityType", lit("item"))
         .withColumn("targetEntityId", col("content_id").cast(StringType))
         .withColumn("eventTime", lit(current_timestamp()))

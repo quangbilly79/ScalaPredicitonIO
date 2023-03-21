@@ -1,4 +1,4 @@
-package com.predictionIO.importData
+package com.predictionIO.importDataInitial
 
 import org.apache.predictionio.sdk.java.FileExporter
 import org.apache.spark.sql.SparkSession
@@ -13,16 +13,17 @@ object importWishlistEventJson {
     def importWishlistJson(): Unit = {
       var sqlWishlist =
         """
-          |select user_id, fr.content_id from waka.waka_pd_fact_wishlist as fr
-          |join waka.content_dim as cd on fr.content_id = cd.content_id
-          |where data_date_key >= 20220101 and data_date_key < 20220701
+          |select su.account_id, fw.content_id from waka.waka_pd_fact_wishlist as fw
+          |join waka.content_dim as cd on fw.content_id = cd.content_id
+          |join waka.sqoop_user as su on fw.user_id = su.id
+          |where fw.data_date_key >= 20220101 and fw.data_date_key < 20220701 and su.account_id is not null
           |and cd.status = "ACT"
           """.stripMargin
       var dfWishlist = spark.sql(sqlWishlist)
       val wishlistEventJson = dfWishlist
         .withColumn("event", lit("wishlist"))
         .withColumn("entityType", lit("user"))
-        .withColumn("entityId", col("user_id").cast(StringType))
+        .withColumn("entityId", col("account_id").cast(StringType))
         .withColumn("targetEntityType", lit("item"))
         .withColumn("targetEntityId", col("content_id").cast(StringType))
         .withColumn("eventTime", lit(current_timestamp()))

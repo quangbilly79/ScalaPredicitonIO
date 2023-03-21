@@ -1,4 +1,4 @@
-package com.predictionIO.importData
+package com.predictionIO.importDataInitial
 
 import org.apache.predictionio.sdk.java.{Event, EventClient, FileExporter}
 import org.apache.spark.sql.SparkSession
@@ -15,10 +15,13 @@ object importItemPropertiesJson {
     def importItemProperties(): Unit = {
       var sqlItemProperties =
         """
-          |select cd.content_id, collect_set(cast(cab.author_id as string)) as author, collect_set(cast(ccb.category_id as string)) as category
+          |select cd.content_id, collect_set(cast(cab.author_id as string)) as author,
+          |collect_set(cast(ccb.category_id as string)) as category,
+          |collect_set(cast(
           |from waka.content_dim as cd
           |left join waka.content_category_brid as ccb on cd.content_id = ccb.content_id
           |left join waka.content_author_brid as cab on cd.content_id = cab.content_id
+          |left join waka.content_tag_brid as ctb on cd.content_id = ctb.content_id
           |where cd.status = "ACT" and ccb.status = "ACT"
           |group by cd.content_id
           |order by cd.content_id""".stripMargin
