@@ -13,12 +13,20 @@ object importReadEventJson {
   def main(args: Array[String]) {
     var spark = SparkSession.builder.getOrCreate()
     def importReadJson(): Unit = {
+      // event read.
+      // Lấy account_id (vegaid_id) chứ k phải user_id
+      // Vì bảng fact_read cột content_key bị lỗi nên không join theo content_key đc
+      // chỉ lấy book(content_type_key = 1) và status = ACT và content_type_key = 1
+      // cũng như k lấy user_id/vegaid_id = 0 (k có account) để tránh loãng dl
+      // Import lần đầu từ 01 / 01 / 2022 đến tháng 20 / 10 / 2022 (dừng update)
       var sqlRead =
         """
-          |select vegaid_id, fr.content_id from waka.waka_pd_fact_reader as fr
-          |join waka.content_dim as cd on fr.content_id = cd.content_id
-          |where data_date_key >= 20220101 and data_date_key < 20220701
-          |and cd.status = "ACT" order by vegaid_id
+          |select fr.vegaid_id, fr.content_id, fr.data_date_key from waka.waka_pd_fact_reader as fr
+          |join (select content_id from waka.content_dim where status = "ACT" and content_type_key = 1)
+          |as cd on fr.content_id = cd.content_id
+          |where fr.data_date_key >= 20220101 and fr.data_date_key <= 20231231 and fr.content_type_key = 1
+          |and fr.vegaid_id != 0 and fr.user_id != 0
+          |order by fr.vegaid_id
           |""".stripMargin
       var dfRead = spark.sql(sqlRead)
       val readEventJson = dfRead
@@ -27,7 +35,8 @@ object importReadEventJson {
         .withColumn("entityId", col("vegaid_id").cast(StringType))
         .withColumn("targetEntityType", lit("item"))
         .withColumn("targetEntityId", col("content_id").cast(StringType))
-        .withColumn("eventTime", lit(current_timestamp()))
+        .withColumn("eventTime", from_unixtime( //lấy eventTime dựa trên data_date_key của event 20220131 => 2022-01-31'T'00:00:00.000+07:00
+          unix_timestamp(col("data_date_key").cast("string"), "yyyyMMdd"), "yyyy-MM-dd'T'HH:mm:ss.SSSXXX"))
         .select("event", "entityType", "entityId", "targetEntityType", "targetEntityId", "eventTime")
 
       readEventJson.write.json("readEvent.json")

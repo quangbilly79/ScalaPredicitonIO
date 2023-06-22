@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="predictionIO:kafkaGenerator">
+    <output-path>$PROJECT_DIR$/out/artifacts/predictionIO_kafkaGenerator</output-path>
+    <root id="archive" name="predictionIO.jar">
+      <element id="module-output" name="predictionIO" />
+      <element id="library" level="module" name="sbt: unmanaged-sources-and-docs" module-name="predictionIO" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/packages.confluent.io/maven/io/confluent/kafka-avro-serializer/5.0.0/kafka-avro-serializer-5.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/packages.confluent.io/maven/io/confluent/kafka-json-schema-provider/5.5.0/kafka-json-schema-provider-5.5.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/packages.confluent.io/maven/io/confluent/kafka-json-schema-serializer/5.5.0/kafka-json-schema-serializer-5.5.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/packages.confluent.io/maven/io/confluent/kafka-json-serializer/5.5.0/kafka-json-serializer-5.5.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/packages.confluent.io/maven/io/confluent/kafka-schema-registry-client/5.5.0/kafka-schema-registry-client-5.5.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/packages.confluent.io/maven/io/confluent/kafka-schema-serializer/5.5.0/kafka-schema-serializer-5.5.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/packages.confluent.io/maven/org/apache/kafka/kafka-clients/5.5.0-ccs/kafka-clients-5.5.0-ccs.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/com/github/javafaker/javafaker/1.0.2/javafaker-1.0.2.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

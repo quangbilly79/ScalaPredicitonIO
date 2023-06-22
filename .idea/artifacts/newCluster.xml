@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="newCluster">
+    <output-path>$PROJECT_DIR$/out/artifacts/newCluster</output-path>
+    <root id="archive" name="newCluster.jar">
+      <element id="module-output" name="predictionIO" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,64 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="predictionIO:hive2.1.1">
+    <output-path>$PROJECT_DIR$/out/artifacts/predictionIO_hive2_1_1</output-path>
+    <root id="archive" name="predictionIO.jar">
+      <element id="module-output" name="predictionIO" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/com/ning/async-http-client/1.9.33/async-http-client-1.9.33.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/com/google/guava/guava/18.0/guava-18.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/joda-time/joda-time/2.9.9/joda-time-2.9.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/io/netty/netty/3.10.5.Final/netty-3.10.5.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/org/apache/predictionio/predictionio-sdk-java-client/0.13.0/predictionio-sdk-java-client-0.13.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/recombee/api-client/4.0.0/api-client-4.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/squareup/okhttp3/okhttp/4.9.3/okhttp-4.9.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/squareup/okio/okio/2.8.0/okio-2.8.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-common/1.4.0/kotlin-stdlib-common-1.4.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.4.10/kotlin-stdlib-1.4.10.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/13.0/annotations-13.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.13.2/jackson-core-2.13.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.13.2.2/jackson-databind-2.13.2.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.13.2/jackson-annotations-2.13.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/junit/junit/4.13.1/junit-4.13.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.6/commons-lang-2.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.10/commons-codec-1.10.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/org/apache/kafka/kafka-clients/2.0.0/kafka-clients-2.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/com/github/luben/zstd-jni/1.3.2-2/zstd-jni-1.3.2-2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/org/lz4/lz4-java/1.4.1/lz4-java-1.4.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/org/xerial/snappy/snappy-java/1.1.7.1/snappy-java-1.1.7.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.28/mysql-connector-java-8.0.28.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/net/debasishg/redisclient_2.11/3.41/redisclient_2.11-3.41.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/io/airlift/aircompressor/0.10/aircompressor-0.10.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/packages.confluent.io/maven/io/confluent/common-config/5.0.0/common-config-5.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/packages.confluent.io/maven/io/confluent/common-utils/5.0.0/common-utils-5.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/packages.confluent.io/maven/io/confluent/kafka-avro-serializer/5.0.0/kafka-avro-serializer-5.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/packages.confluent.io/maven/io/confluent/kafka-schema-registry-client/5.0.0/kafka-schema-registry-client-5.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/io/dropwizard/metrics/metrics-core/3.1.5/metrics-core-3.1.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/io/dropwizard/metrics/metrics-graphite/3.1.5/metrics-graphite-3.1.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/io/dropwizard/metrics/metrics-json/3.1.5/metrics-json-3.1.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/io/dropwizard/metrics/metrics-jvm/3.1.5/metrics-jvm-3.1.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/io/netty/netty-all/4.1.17.Final/netty-all-4.1.17.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/io/netty/netty/3.10.6.Final/netty-3.10.6.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.5.6/httpclient-4.5.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.4.10/httpcore-4.4.10.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repository.cloudera.com/artifactory/cloudera-repos/org/apache/hive/shims/hive-shims-0.23/2.1.1-cdh6.2.0/hive-shims-0.23-2.1.1-cdh6.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repository.cloudera.com/artifactory/cloudera-repos/org/apache/hive/shims/hive-shims-common/2.1.1-cdh6.2.0/hive-shims-common-2.1.1-cdh6.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repository.cloudera.com/artifactory/cloudera-repos/org/apache/hive/shims/hive-shims-scheduler/2.1.1-cdh6.2.0/hive-shims-scheduler-2.1.1-cdh6.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repository.cloudera.com/artifactory/cloudera-repos/org/apache/hive/hive-classification/2.1.1-cdh6.2.0/hive-classification-2.1.1-cdh6.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repository.cloudera.com/artifactory/cloudera-repos/org/apache/hive/hive-common/2.1.1-cdh6.2.0/hive-common-2.1.1-cdh6.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repository.cloudera.com/artifactory/cloudera-repos/org/apache/hive/hive-jdbc/2.1.1-cdh6.2.0/hive-jdbc-2.1.1-cdh6.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repository.cloudera.com/artifactory/cloudera-repos/org/apache/hive/hive-llap-client/2.1.1-cdh6.2.0/hive-llap-client-2.1.1-cdh6.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repository.cloudera.com/artifactory/cloudera-repos/org/apache/hive/hive-llap-common/2.1.1-cdh6.2.0/hive-llap-common-2.1.1-cdh6.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repository.cloudera.com/artifactory/cloudera-repos/org/apache/hive/hive-llap-server/2.1.1-cdh6.2.0/hive-llap-server-2.1.1-cdh6.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repository.cloudera.com/artifactory/cloudera-repos/org/apache/hive/hive-llap-tez/2.1.1-cdh6.2.0/hive-llap-tez-2.1.1-cdh6.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repository.cloudera.com/artifactory/cloudera-repos/org/apache/hive/hive-metastore/2.1.1-cdh6.2.0/hive-metastore-2.1.1-cdh6.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repository.cloudera.com/artifactory/cloudera-repos/org/apache/hive/hive-orc/2.1.1-cdh6.2.0/hive-orc-2.1.1-cdh6.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repository.cloudera.com/artifactory/cloudera-repos/org/apache/hive/hive-serde/2.1.1-cdh6.2.0/hive-serde-2.1.1-cdh6.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repository.cloudera.com/artifactory/cloudera-repos/org/apache/hive/hive-service-rpc/2.1.1-cdh6.2.0/hive-service-rpc-2.1.1-cdh6.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repository.cloudera.com/artifactory/cloudera-repos/org/apache/hive/hive-service/2.1.1-cdh6.2.0/hive-service-2.1.1-cdh6.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repository.cloudera.com/artifactory/cloudera-repos/org/apache/hive/hive-shims/2.1.1-cdh6.2.0/hive-shims-2.1.1-cdh6.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repository.cloudera.com/artifactory/cloudera-repos/org/apache/hive/hive-storage-api/2.1.1-cdh6.2.0/hive-storage-api-2.1.1-cdh6.2.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

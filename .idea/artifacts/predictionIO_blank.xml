@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="predictionIO:blank">
+    <output-path>$PROJECT_DIR$/out/artifacts/predictionIO_blank</output-path>
+    <root id="archive" name="predictionIO.jar">
+      <element id="module-output" name="predictionIO" />
+      <element id="library" level="module" name="sbt: unmanaged-sources-and-docs" module-name="predictionIO" />
+    </root>
+  </artifact>
+</component>
