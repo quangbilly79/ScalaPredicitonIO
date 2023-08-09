@@ -3,7 +3,6 @@ import java.net.URLEncoder
 import java.sql.{Connection, DriverManager, ResultSet}
 object testMysql {
   def main(args: Array[String]): Unit = {
-
     // Load các ttin cần thiết cho jdbc
     val url = "jdbc:mysql://172.25.0.113:3306/waka"
     val user = "etl"

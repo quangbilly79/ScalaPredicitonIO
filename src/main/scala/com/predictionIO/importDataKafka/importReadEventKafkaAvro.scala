@@ -20,9 +20,9 @@ object importReadEventKafkaAvro {
     val accessKey = "bfLleHuY0jIHUDlYZyyiHu3Ss0p80iW4CVeUb6MFSnJKItTUJ2AbUf3kgRpyI4iQ"
     // sandbox: "lpFLJ5o83vW1B0LLGNQ7mOoZxdx43h2dUyAZpsjdkIYwwTDktM42p48gUosasnV7"
     // production: "bfLleHuY0jIHUDlYZyyiHu3Ss0p80iW4CVeUb6MFSnJKItTUJ2AbUf3kgRpyI4iQ"
-    val eventUrl = "http://172.25.0.124:7070"
+    val eventUrl = "http://data-node12:7070"
     // sandbox: "http://172.25.48.219:7070"
-    // production: "http://172.25.0.105:7070"
+    // production: "http://172.25.0.124:7070"
     val client = new EventClient(accessKey, eventUrl)
 
     //------------------------------------------ Khởi tạo Mysql connection
@@ -30,14 +30,14 @@ object importReadEventKafkaAvro {
     val user = "etl"
     val password = "Vega123312##"
     // Tạo 1 connection duy nhất
-    val connection = DriverManager.getConnection(url, user, password)
+    val connection = DriverManager.getConnection("jdbc:mysql://172.25.0.113:3306/waka?user=etl&password=Vega123312%23%23") // &autoReconnect=true
     // Dùng preparedStatement vì sql query khá giống nhau, chỉ khác 1 tham số (content_id)
     // Có thể dùng createStatement cũng được, những sẽ phải đặt trong vòng lặp
     val preparedStatement = connection.prepareStatement("SELECT status FROM content_dim where content_id = ? and content_type_key = 1 limit 1")
 
     //------------------------------------------ Khởi tạo Redis connection
     // Nhớ chọn host master để write
-    val REDIS_HOST: String = "172.25.0.109"
+    val REDIS_HOST: String = "data-node05"
     val REDIS_PORT: Int = 6379
     val redisClient = new RedisClient(REDIS_HOST, REDIS_PORT)
     // 30 ngày sẽ xóa cache cũ đi update lại, đề phòng TH 1 cuốn sách status từ ACT => INA hoặc ng lại
@@ -75,7 +75,7 @@ object importReadEventKafkaAvro {
     while (true) {
       // poll timeout là thời gian nghỉ / chuyển sang topic khác nếu k có log nào ms
       val records = consumer.poll(Duration.ofMillis(100));
-
+      //println(s"records: $records")
       // Vơi mỗi log (record), bđ xử lý dl
       records.asScala.foreach { record =>
         // Xử lý từng record, vì key null nên chỉ lấy value (type Avro (Generic Record)), kha giống Json, có thể .get
@@ -97,15 +97,16 @@ object importReadEventKafkaAvro {
               //println(s"Co san trong redis, status = ACT. vega_id: ${vega_id}, content_id: ${content_id}")
               //println(s"redis_key: ${redis_key}")
               // Tạo event và gửi lên PredicitonIO
+              //println(s"vega_id: $vega_id")
               val readEvent = new Event()
                 .event("read")
                 .entityType("user")
                 .entityId(vega_id)
                 .targetEntityType("item")
                 .targetEntityId(content_id)
-              //println(s"Co san trong redis, status = ACT. Gui len predicitonIO Engine ${readEvent}");
+              println(s"Co san trong redis, status = ACT. Gui len predicitonIO Engine ${readEvent}")
               client.createEvent(readEvent);
-
+              println(s"Done_1")
 
               // Nếu không tồn tại cache trong Redis, thì chọc vào Mysql, và viết lại dl (status) vào redis
               // Để lần sau k phải chọc vào mysql nữa
@@ -126,15 +127,17 @@ object importReadEventKafkaAvro {
 
                 // nếu status = ACT thì ms đẩy vào Engine
                 if (status == "ACT") {
-                  //println(s"K co san trong redis, status = ACT. content_id: ${content_id}, content_name: ${content_name}, status: ${status}")
+                  println(s"vega_id: $vega_id")
+                  // println(s"K co san trong redis, status = ACT. content_id: ${content_id}, status: ${status}")
                   val readEvent = new Event()
                     .event("read")
                     .entityType("user")
                     .entityId(vega_id)
                     .targetEntityType("item")
                     .targetEntityId(content_id)
-                  println(s"${currentTime}: Khong co san trong redis, status = ACT. Gui len predicitonIO Engine ${readEvent}");
-                  client.createEvent(readEvent);
+                  println(s"${currentTime}: Khong co san trong redis, status = ACT. Gui len predicitonIO Engine ${readEvent}")
+                  client.createEvent(readEvent)
+                  println("done_2")
                 }
                 else { // status = INA thì skip k import len nua
                   //println(s"K co san trong redis, status = INA. content_id: ${content_id}, content_name: ${content_name}, status: ${status}")
@@ -151,7 +154,7 @@ object importReadEventKafkaAvro {
           }
 
         }
-        //println("-------------Het 1 log---------------------")
+        println("-------------Het 1 log---------------------")
 
       }
     }

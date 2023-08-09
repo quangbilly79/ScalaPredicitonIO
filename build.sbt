@@ -24,7 +24,9 @@ libraryDependencies ++= Seq(
 //1.1.0-cdh5.14.4: Production, 2.1.1-cdh6.2.0: Sandbox
 
 // kafka/spark-kafka
-libraryDependencies ++= Seq("org.apache.spark" %% "spark-sql-kafka-0-10" % "2.4.0",
+libraryDependencies ++= Seq(
+  "org.apache.kafka" % "kafka-clients" % "2.1.0",
+  //"org.apache.spark" %% "spark-sql-kafka-0-10" % "2.4.0",
   "io.confluent" % "kafka-avro-serializer" % "5.0.0",
   "io.confluent" % "kafka-json-schema-serializer" % "5.5.0"
 )
